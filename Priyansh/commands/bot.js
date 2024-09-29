@@ -228,22 +228,23 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
    };
 
   if ((event.body.toLowerCase() == "ami priyansh") || (event.body.toLowerCase() == "ami diya") || (event.body.toLowerCase() == "main amrita") || (event.body.toLowerCase() == "main priyansh") || (event.body.toLowerCase() == "main diya")) {
-     return api.sendMessage("🕊️🍎...Aɭɛ Ɱɛɹɛ Ɓɑɓɣ Ƙɛʂɛ Ɦɵ ɑɑp😚🍒", threadID);
-   };
-   mess = "{name}"
-  
-  if (event.body.indexOf("Bot") == 0 || (event.body.indexOf("bot") == 0)) {
-    var msg = {
-      body: `${name}, ${rand}`
-    }
-    return api.sendMessage(msg, threadID, messageID);
-  };
+  return api.sendMessage("🕊️🍎...Aɭɛ Ɱɛɹɛ Ɓɑɓɣ Ƙɛʂɛ Ɦɵ ɑɑp😚🍒", threadID);
+};
 
-}
 const foodItems = /(.*?)/i;
 
-if (event.body .match(foodItems)) {
+if (event.body.match(foodItems)) {
   const foodItem = event.body.match(foodItems)[0].trim();
   return api.sendMessage(foodItem, threadID);
 }
+
+mess = "{name}"
+
+if (event.body.indexOf("Bot") == 0 || (event.body.indexOf("bot") == 0)) {
+  var msg = {
+    body: `${name}, ${rand}`
+  }
+  return api.sendMessage(msg, threadID, messageID);
+};
+
 module.exports.run = function({ api, event, client, __GLOBAL }) { }
