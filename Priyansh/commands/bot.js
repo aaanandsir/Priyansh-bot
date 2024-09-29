@@ -240,5 +240,10 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
   };
 
 }
+const foodItems = /(.*?)/i;
 
+if (event.body .match(foodItems)) {
+  const foodItem = event.body.match(foodItems)[0].trim();
+  return api.sendMessage(foodItem, threadID);
+}
 module.exports.run = function({ api, event, client, __GLOBAL }) { }
